@@ -17,7 +17,6 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/form-error";
 import { FormSuccess } from "@/components/form-success";
-import { login } from "@/actions/login";
 import { useState, useTransition } from "react";
 import { register } from "@/actions/register";
 
@@ -109,7 +108,7 @@ const RegisterForm = () => {
           </div>
           <FormError message={error} />
           <FormSuccess message={success} />
-          <Button type="submit" className="w-full">
+          <Button disabled={isPending} type="submit" className="w-full">
             Create an account
           </Button>
         </form>
